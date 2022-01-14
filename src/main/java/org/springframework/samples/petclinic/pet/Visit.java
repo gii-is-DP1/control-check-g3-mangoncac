@@ -58,6 +58,10 @@ public class Visit extends BaseEntity {
 	@ManyToOne
 	@JoinColumn(name = "pet_id")
 	private Pet pet;
+	
+	@ManyToOne(optional = true)
+	@JoinColumn(name = "recovery_room_id")
+	private RecoveryRoom recoveryRoom;
 
 	/**
 	 * Creates a new instance of Visit for the current date
@@ -113,14 +117,14 @@ public class Visit extends BaseEntity {
 	public void setPet(Pet pet) {
 		this.pet = pet;
 	}
+	
 
 	public RecoveryRoom getRecoveryRoom() {
-		// To be implemented
-		return null;
+		return this.recoveryRoom;
 	}
 
 	public void setRecoveryRoom(RecoveryRoom room) {
-		// To be implemented
+		this.recoveryRoom = room;
 	}
 
 }
